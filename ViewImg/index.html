@@ -1,0 +1,47 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />   
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<!--loading页面-->
+	<div class="loading">
+		<div class="percent"></div>
+		<div class="progress"></div>
+	</div>
+	<!--wlecome 欢迎页面-->
+	<div class="light">
+	</div>
+
+	<div class="basice-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">1</div>
+			<div class="swiper-slide">2</div>
+			<div class="swiper-slide">3</div>
+			<div class="swiper-slide">4</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="lib/swiper/swiper.min.js"></script>
+
+<!-- 导入 zepto-->
+<script type="text/javascript" src="lib/zepto/zepto.js"></script>
+<script type="text/javascript" src="lib/zepto/event.js"></script>
+<script type="text/javascript" src="lib/zepto/fx.js"></script>
+<script type="text/javascript" src="lib/zepto/touch.js"></script>
+
+<!-- 提供fadeOut方法。 fx_mehods-->
+<script type="text/javascript" src="lib/zepto/fx_methods.js"></script>
+<script type="text/javascript">
+  var mySwiper = new Swiper ('.basice-container', {
+    direction: 'vertical',
+	});
+  $('.loading').click(function() {
+  	$(this).fadeOut();
+  });
+  $('.light').click(function() {
+  	$(this).fadeOut();
+  });
+</script>

@@ -1,0 +1,34 @@
+
+* {
+	margin:	0;
+	padding: 0;
+	box-sizing: border-box;
+
+	// tap 高亮 一般给透明即可
+	-webkit-top-highlight-color: transparent;
+}
+ul,ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.clearfix::before,
+.clearfix::after {
+	content: '';
+	display: block;
+	line-height: 0;
+	height: 0;
+	clear: both;
+	visibility: 0;
+}
+.clearfix {
+	// 移动端
+	zoom: 1;
+}
