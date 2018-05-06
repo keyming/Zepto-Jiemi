@@ -31,6 +31,51 @@ html,body {
 	width: pr($width);
 	height: pr($height);
 }
+// 自定义动漫
+@keyframes steps{
+	form{}  // 这可以省约不写
+	to {
+		width: 100%;
+	}
+}
+
+// loading 字体晃动
+@keyframes bearLoading {
+	10% {
+		transform: translateX(pr(-26*1)) translateY(pr(-10)); 
+	}
+	20% {
+		transform: translateX(pr(-26*2)) translateY(pr(10));
+	}
+	30% {
+		transform: translateX(pr(-26*3)) translateY(pr(-10));
+	}
+	40% {
+		transform: translateX(pr(-26*4)) translateY(pr(10));
+	}
+	50% {
+		transform: translateX(pr(-26*5)) translateY(pr(-10));
+	}
+	60% {
+		transform: translateX(pr(-26*6)) translateY(pr(10)); 
+	}
+	70% {
+		transform: translateX(pr(-26*7)) translateY(pr(-10));
+	}
+	80% {
+		transform: translateX(pr(-26*8)) translateY(pr(10));
+	}
+	90% {
+		transform: translateX(pr(-26*9)) translateY(pr(-10));
+	}
+	100% {
+		transform: translateX(pr(-26*10)) translateY(pr(10));
+	}
+	top: {
+		// 走的动画
+		// transform: translateX(pr(-600));
+	}
+}
 // loading 页面
 .loading {
 	height: 100%;
@@ -38,8 +83,23 @@ html,body {
 	top: 0;
 	position: absolute;
 	background:url('../images/city.gif')
-	no-repeat 50% 100%;
-	z-index: 200;
+	no-repeat center / 100% 70%;
+	z-index: 20;
+	.title {
+		position: absolute;
+		left: pr(200);
+		top: pr(100);
+		padding-left: p2r(40);
+		h5 {
+			color: blue;
+			font-size: pr(43);
+		}
+		p {
+			padding-top: pr(30);
+			color: #fff;
+			font-size: pr(33);
+		}
+	}
 	.percent {
 		@include size(480,32);
 		@include bgc('../images/timg2.png',480);
@@ -59,7 +119,12 @@ html,body {
 	height: 100%;
 	width: 100%;
 	@include bg('../images/light.png');
-	z-index: 50;
+	z-index: 10;
+	.github	{
+		@include size(742,424);
+		@include bgc('../images/github3.png',742);
+		top: pr(500);
+	}
 }
 // swiper 页面
 .basice-container {
@@ -67,4 +132,102 @@ html,body {
 	width: 100%;
 	position: absolute;
 	top: 0;
+	left: 0;
+    .page2,.page3,.page4 {
+		.images1 {
+			@include size(842,940);
+			top: 0;
+			z-index: 2;
+		}
+		.images2 {
+			@include size(842,960);
+			z-index: 1;
+			bottom: 0;
+		}
+	}
+	.page1 {
+		.images1 {
+			@include size(840,940);
+			@include bgc('../images/city12.png',840);
+			top: 0;
+			z-index: 2;
+		}
+		.images2 {
+			@include size(840,960);
+			@include bgc('../images/city13.png',840);
+			bottom: 0;
+			z-index: 1;
+		}
+		.title{
+			position: absolute;
+			left: pr(200);
+			bottom: pr(200);
+			z-index: 3;
+			h5 {
+				color: blue;
+				font-size: pr(40);
+			}
+			p{
+				position: absolute;
+				left: pr(300);
+				padding-top: pr(30);
+				color: red;
+				font-size: pr(30)
+			}
+
+		}
 }
+	.page2 {
+		.images1 {
+			@include bgc('../images/city4.png',842);
+		}
+		.images2 {
+			@include bgc('../images/city5.jpg',842);
+		}
+
+	}
+	.page3 {
+		.images1 {
+			@include bgc('../images/city6.png',842);
+		}
+		.images2 {
+			@include bgc('../images/city7.jpg',842);
+		}
+	}
+	.page4 {
+		.images1 {
+			@include bgc('../images/city8.png',842);
+		}
+		.images2 {
+			@include bgc('../images/city9.jpg',842);
+		}
+	}
+}
+
+.loading {
+	.progress {
+		background-color: transparent;
+		.step {
+			height: 100%;
+			width: 20%;
+			border-radius: pr(480);
+			background-color: #000;
+			position: absolute;
+		}
+	}
+}
+
+// loading 触发动画
+.loading.aniamte {
+	.step {
+		animation: steps 3s linear;	
+	}
+	// 字体动画
+	.title {
+		h5 {
+			animation: bearLoading 3s linear forwards;
+		}
+	}
+
+}
+

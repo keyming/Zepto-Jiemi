@@ -1006,13 +1006,123 @@ html, body {
   height: 100%;
 }
 
+@-webkit-keyframes steps {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes steps {
+  to {
+    width: 100%;
+  }
+}
+@-webkit-keyframes bearLoading {
+  10% {
+    -webkit-transform: translateX(-0.8125rem) translateY(-0.3125rem);
+            transform: translateX(-0.8125rem) translateY(-0.3125rem);
+  }
+  20% {
+    -webkit-transform: translateX(-1.625rem) translateY(0.3125rem);
+            transform: translateX(-1.625rem) translateY(0.3125rem);
+  }
+  30% {
+    -webkit-transform: translateX(-2.4375rem) translateY(-0.3125rem);
+            transform: translateX(-2.4375rem) translateY(-0.3125rem);
+  }
+  40% {
+    -webkit-transform: translateX(-3.25rem) translateY(0.3125rem);
+            transform: translateX(-3.25rem) translateY(0.3125rem);
+  }
+  50% {
+    -webkit-transform: translateX(-4.0625rem) translateY(-0.3125rem);
+            transform: translateX(-4.0625rem) translateY(-0.3125rem);
+  }
+  60% {
+    -webkit-transform: translateX(-4.875rem) translateY(0.3125rem);
+            transform: translateX(-4.875rem) translateY(0.3125rem);
+  }
+  70% {
+    -webkit-transform: translateX(-5.6875rem) translateY(-0.3125rem);
+            transform: translateX(-5.6875rem) translateY(-0.3125rem);
+  }
+  80% {
+    -webkit-transform: translateX(-6.5rem) translateY(0.3125rem);
+            transform: translateX(-6.5rem) translateY(0.3125rem);
+  }
+  90% {
+    -webkit-transform: translateX(-7.3125rem) translateY(-0.3125rem);
+            transform: translateX(-7.3125rem) translateY(-0.3125rem);
+  }
+  100% {
+    -webkit-transform: translateX(-8.125rem) translateY(0.3125rem);
+            transform: translateX(-8.125rem) translateY(0.3125rem);
+  }
+}
+@keyframes bearLoading {
+  10% {
+    -webkit-transform: translateX(-0.8125rem) translateY(-0.3125rem);
+            transform: translateX(-0.8125rem) translateY(-0.3125rem);
+  }
+  20% {
+    -webkit-transform: translateX(-1.625rem) translateY(0.3125rem);
+            transform: translateX(-1.625rem) translateY(0.3125rem);
+  }
+  30% {
+    -webkit-transform: translateX(-2.4375rem) translateY(-0.3125rem);
+            transform: translateX(-2.4375rem) translateY(-0.3125rem);
+  }
+  40% {
+    -webkit-transform: translateX(-3.25rem) translateY(0.3125rem);
+            transform: translateX(-3.25rem) translateY(0.3125rem);
+  }
+  50% {
+    -webkit-transform: translateX(-4.0625rem) translateY(-0.3125rem);
+            transform: translateX(-4.0625rem) translateY(-0.3125rem);
+  }
+  60% {
+    -webkit-transform: translateX(-4.875rem) translateY(0.3125rem);
+            transform: translateX(-4.875rem) translateY(0.3125rem);
+  }
+  70% {
+    -webkit-transform: translateX(-5.6875rem) translateY(-0.3125rem);
+            transform: translateX(-5.6875rem) translateY(-0.3125rem);
+  }
+  80% {
+    -webkit-transform: translateX(-6.5rem) translateY(0.3125rem);
+            transform: translateX(-6.5rem) translateY(0.3125rem);
+  }
+  90% {
+    -webkit-transform: translateX(-7.3125rem) translateY(-0.3125rem);
+            transform: translateX(-7.3125rem) translateY(-0.3125rem);
+  }
+  100% {
+    -webkit-transform: translateX(-8.125rem) translateY(0.3125rem);
+            transform: translateX(-8.125rem) translateY(0.3125rem);
+  }
+}
 .loading {
   height: 100%;
   width: 100%;
   top: 0;
   position: absolute;
-  background: url("../images/city.gif") no-repeat 50% 100%;
-  z-index: 200;
+  background: url("../images/city.gif") no-repeat center/100% 70%;
+  z-index: 20;
+}
+.loading .title {
+  position: absolute;
+  left: 6.25rem;
+  top: 3.125rem;
+  padding-left: p2r(40);
+}
+.loading .title h5 {
+  color: blue;
+  font-size: 1.34375rem;
+}
+.loading .title p {
+  padding-top: 0.9375rem;
+  color: #fff;
+  font-size: 1.03125rem;
 }
 .loading .percent {
   width: 15rem;
@@ -1041,7 +1151,16 @@ html, body {
   width: 100%;
   background: url("../images/light.png") no-repeat center/100% 100%;
   position: absolute;
-  z-index: 50;
+  z-index: 10;
+}
+.light .github {
+  width: 23.1875rem;
+  height: 13.25rem;
+  background: url("../images/github3.png") no-repeat center/100% 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -11.59375rem;
+  top: 15.625rem;
 }
 
 .basice-container {
@@ -1049,4 +1168,110 @@ html, body {
   width: 100%;
   position: absolute;
   top: 0;
+  left: 0;
+}
+.basice-container .page2 .images1, .basice-container .page3 .images1, .basice-container .page4 .images1 {
+  width: 26.3125rem;
+  height: 29.375rem;
+  top: 0;
+  z-index: 2;
+}
+.basice-container .page2 .images2, .basice-container .page3 .images2, .basice-container .page4 .images2 {
+  width: 26.3125rem;
+  height: 30rem;
+  z-index: 1;
+  bottom: 0;
+}
+.basice-container .page1 .images1 {
+  width: 26.25rem;
+  height: 29.375rem;
+  background: url("../images/city12.png") no-repeat center/100% 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -13.125rem;
+  top: 0;
+  z-index: 2;
+}
+.basice-container .page1 .images2 {
+  width: 26.25rem;
+  height: 30rem;
+  background: url("../images/city13.png") no-repeat center/100% 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -13.125rem;
+  bottom: 0;
+  z-index: 1;
+}
+.basice-container .page1 .title {
+  position: absolute;
+  left: 6.25rem;
+  bottom: 6.25rem;
+  z-index: 3;
+}
+.basice-container .page1 .title h5 {
+  color: blue;
+  font-size: 1.25rem;
+}
+.basice-container .page1 .title p {
+  position: absolute;
+  left: 9.375rem;
+  padding-top: 0.9375rem;
+  color: red;
+  font-size: 0.9375rem;
+}
+.basice-container .page2 .images1 {
+  background: url("../images/city4.png") no-repeat center/100% 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -13.15625rem;
+}
+.basice-container .page2 .images2 {
+  background: url("../images/city5.jpg") no-repeat center/100% 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -13.15625rem;
+}
+.basice-container .page3 .images1 {
+  background: url("../images/city6.png") no-repeat center/100% 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -13.15625rem;
+}
+.basice-container .page3 .images2 {
+  background: url("../images/city7.jpg") no-repeat center/100% 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -13.15625rem;
+}
+.basice-container .page4 .images1 {
+  background: url("../images/city8.png") no-repeat center/100% 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -13.15625rem;
+}
+.basice-container .page4 .images2 {
+  background: url("../images/city9.jpg") no-repeat center/100% 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -13.15625rem;
+}
+
+.loading .progress {
+  background-color: transparent;
+}
+.loading .progress .step {
+  height: 100%;
+  width: 20%;
+  border-radius: 15rem;
+  background-color: #000;
+  position: absolute;
+}
+
+.loading.aniamte .step {
+  -webkit-animation: steps 3s linear;
+          animation: steps 3s linear;
+}
+.loading.aniamte .title h5 {
+  -webkit-animation: bearLoading 3s linear forwards;
+          animation: bearLoading 3s linear forwards;
 }
