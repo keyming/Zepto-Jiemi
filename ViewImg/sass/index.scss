@@ -1,3 +1,7 @@
+ /*
+	2018-5-5 
+ */
+
 // 引入 normalize.css
 @import 'normalize.scss';
 // 引入 swiper
@@ -10,6 +14,8 @@ html,body {
 
 	// loading 页面
 }
+
+
 // 计算子寸函数
 @function pr($size) {
 	@return ($size/32)*1rem;
@@ -31,51 +37,10 @@ html,body {
 	width: pr($width);
 	height: pr($height);
 }
-// 自定义动漫
-@keyframes steps{
-	form{}  // 这可以省约不写
-	to {
-		width: 100%;
-	}
-}
 
-// loading 字体晃动
-@keyframes bearLoading {
-	10% {
-		transform: translateX(pr(-26*1)) translateY(pr(-10)); 
-	}
-	20% {
-		transform: translateX(pr(-26*2)) translateY(pr(10));
-	}
-	30% {
-		transform: translateX(pr(-26*3)) translateY(pr(-10));
-	}
-	40% {
-		transform: translateX(pr(-26*4)) translateY(pr(10));
-	}
-	50% {
-		transform: translateX(pr(-26*5)) translateY(pr(-10));
-	}
-	60% {
-		transform: translateX(pr(-26*6)) translateY(pr(10)); 
-	}
-	70% {
-		transform: translateX(pr(-26*7)) translateY(pr(-10));
-	}
-	80% {
-		transform: translateX(pr(-26*8)) translateY(pr(10));
-	}
-	90% {
-		transform: translateX(pr(-26*9)) translateY(pr(-10));
-	}
-	100% {
-		transform: translateX(pr(-26*10)) translateY(pr(10));
-	}
-	top: {
-		// 走的动画
-		// transform: translateX(pr(-600));
-	}
-}
+
+
+
 // loading 页面
 .loading {
 	height: 100%;
@@ -84,12 +49,11 @@ html,body {
 	position: absolute;
 	background:url('../images/city.gif')
 	no-repeat center / 100% 70%;
-	z-index: 20;
+	z-index: 3;
 	.title {
 		position: absolute;
 		left: pr(200);
 		top: pr(100);
-		padding-left: p2r(40);
 		h5 {
 			color: blue;
 			font-size: pr(43);
@@ -119,11 +83,34 @@ html,body {
 	height: 100%;
 	width: 100%;
 	@include bg('../images/light.png');
-	z-index: 10;
+	z-index: 2;
 	.github	{
 		@include size(742,424);
 		@include bgc('../images/github3.png',742);
-		top: pr(500);
+		top: pr(400);
+		width: 100%;
+		height: 100%;
+	}
+	.title{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: pr(400); 
+	h5{
+		color: #ccc;
+		 font-size: pr(20);
+		}
+	 p {
+	 	color: #ddd;
+	 	font-size: pr(30);
+	 }
+	}
+	.button{
+		@include size(170,170);
+		@include bgc('../images/button1.png',170);
+		bottom: pr(200);
+		border-radius: 50%;
+		border: 1px solid red;
 	}
 }
 // swiper 页面
@@ -146,9 +133,10 @@ html,body {
 		}
 	}
 	.page1 {
+		background: #ccc;
 		.images1 {
 			@include size(840,940);
-			@include bgc('../images/city12.png',840);
+			@include bgc('../images/city14.png',840);
 			top: 0;
 			z-index: 2;
 		}
@@ -157,24 +145,6 @@ html,body {
 			@include bgc('../images/city13.png',840);
 			bottom: 0;
 			z-index: 1;
-		}
-		.title{
-			position: absolute;
-			left: pr(200);
-			bottom: pr(200);
-			z-index: 3;
-			h5 {
-				color: blue;
-				font-size: pr(40);
-			}
-			p{
-				position: absolute;
-				left: pr(300);
-				padding-top: pr(30);
-				color: red;
-				font-size: pr(30)
-			}
-
 		}
 }
 	.page2 {
@@ -204,6 +174,114 @@ html,body {
 	}
 }
 
+	.swiper-slide{	
+		background-color: #000;
+		.title{
+			position: absolute;
+			left: pr(200);
+			bottom: pr(200);
+			z-index: 3;
+			h5 {
+				color: blue;
+				font-size: pr(40);
+			}
+			p{
+				position: absolute;
+				left: pr(300);
+				padding-top: pr(30);
+				color: red;
+				font-size: pr(40);
+				font-weight: pr(700);
+			}
+
+		}
+	}
+
+// 自定义动画
+
+@keyframes steps {
+	to{
+		width: 100%;
+	}
+}
+
+@keyframes githubs{
+	to{
+		@include size(742,424);
+	}
+}
+
+
+// loading 字体晃动
+@keyframes bearLoading {
+	10% {
+		transform: translateX(pr(0)) translateY(pr(-10)); 
+	}
+	20% {
+		transform: translateX(pr(0)) translateY(pr(10));
+	}
+	30% {
+		transform: translateX(pr(0)) translateY(pr(-10));
+	}
+	40% {
+		transform: translateX(pr(0)) translateY(pr(10));
+	}
+	50% {
+		transform: translateX(pr(0)) translateY(pr(-10));
+	}
+	60% {
+		transform: translateX(pr(0)) translateY(pr(10)); 
+	}
+	70% {
+		transform: translateX(pr(0)) translateY(pr(-10));
+	}
+	80% {
+		transform: translateX(pr(0)) translateY(pr(10));
+	}
+	90% {
+		transform: translateX(pr(0)) translateY(pr(-10));
+	}
+	100% {
+		transform: translateX(pr(0)) translateY(pr(10));
+	}
+}
+
+// light 动画
+@keyframes h1s{
+	from {
+		transform: translateY(0%);
+	}
+	60% {
+		transform: translateY(70%);
+		opacity: 1;
+	}
+	70% {
+		transform: translateY(-80%);
+		opacity: 1;
+	}
+		80% {
+		transform: translateY(20%);
+		opacity: 1;
+	}
+	90% {
+		transform: translateY(-10%);
+		opacity: 1;
+	}
+	100% {
+		transform: none;
+		opacity: 1;
+	}
+
+}
+@keyframes buttons {
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+
+// loading 重新 设置样式
+
 .loading {
 	.progress {
 		background-color: transparent;
@@ -217,17 +295,128 @@ html,body {
 	}
 }
 
-// loading 触发动画
-.loading.aniamte {
-	.step {
-		animation: steps 3s linear;	
+.light {
+	.github {
+		@include size(3,3);
 	}
-	// 字体动画
+	.title {
+		h5,p {
+			opacity: 0;
+			top: 0;
+		}
+	}
+}
+
+// loading 触发动画
+.loading.animate {
+	.step {
+		animation: steps 1.5s linear forwards;	
+	}
 	.title {
 		h5 {
-			animation: bearLoading 3s linear forwards;
+			animation: bearLoading 1.5s linear forwards;
 		}
 	}
 
 }
 
+// light 动画 向下移动 变大 透明
+
+@keyframes bigs {
+	from{
+		opacity: 1;
+	}
+	to: {
+		transform: translateY(100%) scale(1.5, 1.5);
+		opacity: 0;
+	}
+}
+
+.light.animate {
+	.github{
+		animation: githubs .5s forwards;
+	}
+	.button{
+		animation: buttons .5s infinite linear;
+	}
+}
+
+// 图片放大
+@keyframes big1{
+	from{
+		opacity: 0;
+	}
+	to{
+		transform: translateY(20%);
+		opacity: 1;
+	}
+
+}
+// 字体动画
+@keyframes texth {
+	from {
+		transform: translateY(100%); // 开始
+	}
+	to {
+		transform: none; //结束
+		opacity: 1;
+	}
+}
+
+.swiper-slide{ 
+	.title {
+	h5 {
+		opacity: 0;
+	}
+	p {
+		opacity: 0;
+	}
+}
+}
+
+
+// page1 
+.swiper-slide {
+		.images2 {
+			opacity: 0;
+		}
+	}
+
+
+.swiper-slide.animate{
+	.images2 {
+		animation: big1 4s  forwards;
+	}
+}
+
+// 字体动画
+
+.swiper-slide.animate {
+	.title {
+		h5{
+		animation: texth 1s forwards;
+	}
+		p {
+			animation: texth 1s 2s forwards;
+		}
+	}
+
+}
+
+input {
+	border: none;
+	outline: none;
+}
+// music
+
+.music {
+	.audioDemo{
+	@include size(36,36);
+	position: absolute;
+	top:  pr(32);
+	right: pr(32);
+	background: url('../images/music.png') 
+	no-repeat  center / 100% 100%;
+	z-index: 888;
+}
+}

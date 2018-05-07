@@ -49,3 +49,7 @@
 	height: pr($height);
 	width: pr(width);
 }
+## 2018-5-8
+	部分js渲染页面 lie 按钮控件  用swiper api 进行 scss  animate 渲染。
+
+	 swiper api 回调函数 去年用onSlideChangeEnd(swiper)可以。  现在更新 4.0 用这 slideChangeTransitionEnd  

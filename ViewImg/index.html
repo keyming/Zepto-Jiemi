@@ -1,5 +1,7 @@
 <html>
 <head>
+	 <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />   
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
@@ -9,7 +11,6 @@
 	<div class="loading">
 		<div class="title">
 			<h5>L o a d i n g .......</h5>
-			<p> 请等候 </p>
 		</div>
 		<div class="percent"></div>
 		<div class="progress">
@@ -20,15 +21,17 @@
 	<div class="light">
 		<div class="github">
 		</div>
+		<div class="button">
+		</div>
 	</div>
-
+	<!--swiper 页面-->
 	<div class="basice-container">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide page1">
 				<div class="images1"></div>
 				<div class="images2"></div>
 				<div class="title">
-					<h5>每个追梦者</h5>
+					<h5>每个 追梦 者</h5>
 					<p>的故事</p>
 				</div>
 			</div>
@@ -36,18 +39,31 @@
 				<div class="images1"></div>
 				<div class="images2"></div>
 				<div class="title">
-					<h5></h5>
+					<h5>这 记忆 中的</h5>
+					<p>城市</p>
 				</div>
 			</div>
 			<div class="swiper-slide page3">
 				<div class="images1"></div>
 				<div class="images2"></div>
+				<div class="title">
+					<h5>追逐 是 唯一</h5>
+					<p>希望</p>
+				</div>
 			</div>
 			<div class="swiper-slide page4">
 				<div class="images1"></div>
 				<div class="images2"></div>
+				<div class="title">
+					<h5>黑夜的寂寞</h5>
+				</div>
 			</div>
 		</div>
+	</div>
+	<!--音频播放-->
+	<div class="music">
+		<audio loop src="music/1.mp3"></audio>
+		<input type="button" class="audioDemo">
 	</div>
 </body>
 </html>
@@ -62,13 +78,57 @@
 <!-- 提供fadeOut方法。 fx_mehods-->
 <script type="text/javascript" src="lib/zepto/fx_methods.js"></script>
 <script type="text/javascript">
+
+	// swiper
   var mySwiper = new Swiper ('.basice-container', {
     direction: 'vertical',
+    	  on: {
+    slideChangeTransitionEnd: function(){
+    // alert(this.activeIndex); // 切换结束时，告诉我现在是第几个slide
+    $('.swiper-slide').eq(this.activeIndex).addClass('animate').siblings().removeClass('animate');
+    },
+},
 	});
-  $('.loading').click(function() {
-  	$(this).fadeOut();
+
+  $(function() {
+  	setTimeout(function() {
+  		$('.loading').addClass('animate');
+  		//js 写法
+  		/*
+  		document.querySelector('.loading .step').addEventListener('animationend', function() {
+  			console.log('你好嘛');
+  		})*/
+  		// jquery 执行跳转页面
+  		$('.loading .step').on('animationend', function() {
+  			// 设置 淡出页面 
+  			$('.loading').fadeOut(1000,function() {
+  				$('.light').addClass('animate');
+  			});
+  		});
+  	}, 1000);
+
+  	// light页 按钮
+  		$('.light .button').longTap(function() {
+  			console.log('安好久啦');
+  			$('.github').css('animation','bigs 1s forwards');
+  			$('.light').fadeOut(1000, function(){
+  				$('.page1').addClass('animate');
+  			})
+  		});
+  })
+
+  // music
+
+  var audioDemos = document.querySelector('audio');
+  		audioDemos.play();
+  $('.audioDemo').click(function() {
+  	if (audioDemos.paused == true) {
+  		audioDemos.play();
+  		$(this).css('background-image', 'url(images/music.png)')
+  } else {
+  	audioDemos.pause();
+  	$(this).css('background-image', 'url(images/music_stop.png)')
+  }
   });
-  $('.light').click(function() {
-  	$(this).fadeOut();
-  });
+
 </script>
