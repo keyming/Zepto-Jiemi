@@ -1,6 +1,6 @@
 <html>
 <head>
-	 <meta name="full-screen" content="yes">
+	  <meta name="full-screen" content="yes">
     <meta name="browsermode" content="application">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />   
 	<title></title>
@@ -78,7 +78,6 @@
 <!-- 提供fadeOut方法。 fx_mehods-->
 <script type="text/javascript" src="lib/zepto/fx_methods.js"></script>
 <script type="text/javascript">
-
 	// swiper
   var mySwiper = new Swiper ('.basice-container', {
     direction: 'vertical',
@@ -91,6 +90,12 @@
 	});
 
   $(function() {
+	function er(e) {
+  	  return e.on('touchmove',function(e){e.preventDefault()});
+  	}
+  	er($('.loading'));
+  	er($('.light'));
+
   	setTimeout(function() {
   		$('.loading').addClass('animate');
   		//js 写法
